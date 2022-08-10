@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap');
+
+
+* {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;  
+    outline: none;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	font-weight: 400;
+    font-size: 1.1rem;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 5px 5px #FFFF;
+}
+
+span{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 5px 5px #FFFF;
+    color: rgba(106, 2, 241, 0.897);
+}
+
+.AppContainer {
+    background-color: #c0c0c0;
+    height: 100vh;
+    color: #000000;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.pomodoroContainer {
+    text-align: center;
+    background-color: #d9e5d6;
+    border-radius: 100%;
+    height: 500px;
+    width: 500px;
+    justify-content: center;
+    box-shadow: 0 0 20px 10px #0fa3b1;
+    animation-name: appear;
+    animation-duration: 2s;
+}
+
+.pomodoro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.breakAndSession {
+    justify-content: center;
+    margin: 30px 0;
+    display: flex;
+    align-self: center;
+}
+.upDownContainer {
+    justify-content: center;
+    align-items: center;
+}
+
+#break-label {
+    width: 200px;
+    margin-left: 0;
+}
+
+#session-label {
+    width: 200px;
+}
+
+#break-length {
+    width: 50px;
+    font-size: 1.5rem;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#session-length {
+    width: 50px;
+    font-size: 1.5rem;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.upDownContainer {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.session {
+    background-color: rgba(0, 0, 0, 0);
+    color: #000000;
+    border: 2px solid #f77808bd;
+    padding: 15px;
+    border-radius: 10px;
+    width: 150px;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+}
+
+.breakSession {
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(255, 0, 0);
+    border: 2px solid #f77808bd;
+    padding: 15px;
+    border-radius: 10px;
+    width: 150px;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#time-left {
+    font-size: 2rem;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.2rem;
+}
+
+#session-decrement, #break-decrement {
+    background-image: url("https://img.icons8.com/ios-glyphs/64/9B59B6/minus.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    transition: .2s;
+    border-radius: 100%;
+    background-color: #e5995600;
+}
+
+#session-decrement:hover, #break-decrement:hover {
+    background-color: #000000;
+    height: 40px;
+    width: 40px;
+}
+
+#session-increment, #break-increment {
+    background-image: url("https://img.icons8.com/ios-glyphs/64/9B59B6/plus--v1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    transition: .2s;
+    border-radius: 100%;
+    background-color: #e5995600;
+}
+
+#session-increment:hover, #break-increment:hover {
+    background-color: #000000;
+    height: 40px;
+    width: 40px;
+}
+
+#reset {
+    background-image: url("https://img.icons8.com/glyph-neue/64/9B59B6/restart.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    transition: .3s;
+    border-radius: 100%;
+    background-color: #ffffff00;
+}
+
+#reset:hover {
+    background-color: #000000;
+}
+
+#start_stop {
+    background-image: url("https://img.icons8.com/ios-glyphs/64/9B59B6/play-button-circled--v1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    transition: .3s;
+    border-radius: 100%;
+    margin-right: 5px;
+    background-color: #ff9a4200;
+}
+
+#start_stop:hover {
+    background-color: #000000;
+}
+
+button:active {
+    box-shadow: 0 0 10px 7px #0fa3b1;
+}
+
+.alarm {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.playAndStop {
+    margin-top: 6px;
+}
+
+.by {
+	position:relative;
+	font-size: .7rem;
+    text-align: center;
+	cursor: pointer;
+	text-decoration: none;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-name: appear;
+    animation-duration: 10s;
+}
+
+.by a {
+	text-decoration: none;
+	color: rgb(29, 27, 27);
+    font-size: .8rem;
+	transition: .3s;
+}
+
+.by a:hover {
+	color: #f77808bd;
+}
+
+@media only screen and (max-width: 768px) {
+    .pomodoroContainer {
+        height: 350px;
+        width: 350px;
+    }
+    #time-left {
+        font-size: 1.5rem;
+    }
+    #title {
+        font-size: 1.8rem;
+    }
+    #break-label, #session-label {
+        margin-top: 10px;
+        width: 150px;
+    }
+    #break-label p, #session-label p {
+        font-size: .9rem
+    }
+    .breakAndSession {
+        margin: 15px 0;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .pomodoroContainer {
+        height: 280px;
+        width: 280px;
+    }
+    #time-left {
+        font-size: 1rem;
+    }
+    #title {
+        font-size: 1rem;
+    }
+    #break-label, #session-label {
+        margin-top: 10px;
+        width: 120px;
+    }
+    #break-label p, #session-label p {
+        font-size: .7rem
+    }
+    .breakAndSession {
+        margin: 15px 0;
+    }
+    .by, .by a  {
+        margin-top: 9px;
+        font-size: .7rem;
+    }
+
+}
+
+@keyframes appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
